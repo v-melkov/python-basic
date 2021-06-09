@@ -33,11 +33,11 @@ def filter_numbers(nums, type):
     (выбор производится передачей дополнительного аргумента)
 
     >>> filter_numbers([1, 2, 3], ODD)
-    [1, 3]
+    <<< [1, 3]
     >>> filter_numbers([2, 3, 4, 5], EVEN)
-    [2, 4]
+    <<< [2, 4]
     >>> filter_numbers([1, 2, 3, 5, 6, 7], PRIME)
-    [2, 3, 5, 7]
+    <<< [2, 3, 5, 7]
     """
     if type == 'odd':
         return list(filter(lambda i: i % 2 == 1, nums))  # Filter function
