@@ -16,11 +16,7 @@ class Plane(Vehicle):
         или устанавливаем равным атрибуту класса
         :param max_cargo: максимальный вес
         '''
-        
         super(Plane, self).__init__(weight, fuel, fuel_consumption)
-        self.weight = weight
-        self.fuel = fuel
-        self.fuel_consumption = fuel_consumption
         self.max_cargo = max_cargo
 
 
