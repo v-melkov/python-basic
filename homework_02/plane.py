@@ -10,24 +10,18 @@ class Plane(Vehicle):
     max_cargo = 10000
 
 
-    def __init__(self, weight=Vehicle.weight, fuel=Vehicle.fuel, fuel_consumption=Vehicle.fuel_consumption, max_cargo=None):
+    def __init__(self, weight, fuel, fuel_consumption, max_cargo=max_cargo):
         '''
         переопределяем значение max_cargo
         или устанавливаем равным атрибуту класса
-
-        остальные значения определяем или берём из родительского класса
-        (если не указать конструкцию типа weight=Vehicle.weight, pytest выдаёт ошибку при проверке)
-
         :param max_cargo: максимальный вес
         '''
+        
+        super(Plane, self).__init__(weight, fuel, fuel_consumption)
         self.weight = weight
         self.fuel = fuel
         self.fuel_consumption = fuel_consumption
-
-        if max_cargo == None:
-            self.max_cargo = Plane.max_cargo
-        else:
-            self.max_cargo = max_cargo
+        self.max_cargo = max_cargo
 
 
     def load_cargo(self, current_cargo):

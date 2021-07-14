@@ -1,7 +1,7 @@
 from homework_02.exceptions import LowFuelError, NotEnoughFuel
 
 
-class Vehicle():
+class Vehicle:
     '''
     Создаём класс Vehicle со значениями по умолчанию
     '''
@@ -11,7 +11,7 @@ class Vehicle():
     fuel_consumption = 0.43  # 1km
 
 
-    def __init__(self, weight=None, fuel=None, fuel_consumption=None):
+    def __init__(self, weight=weight, fuel=fuel, fuel_consumption=fuel_consumption):
         '''
         Инициализируем экземпляр класса
         Если значения веса, топлива и расхода не переданы,
@@ -20,25 +20,16 @@ class Vehicle():
         :param fuel: запас топлива
         :param fuel_consumption: расход топлива
         '''
-        if weight is None:
-            self.weight = Vehicle.weight
-        else:
-            self.weight = weight
-        if fuel is None:
-            self.fuel = Vehicle.fuel
-        else:
-            self.fuel = fuel
-        if fuel_consumption is None:
-            self.fuel_consumption = Vehicle.fuel_consumption
-        else:
-            self.fuel_consumption = fuel_consumption
+        self.weight = weight
+        self.fuel = fuel
+        self.fuel_consumption = fuel_consumption
 
 
     def start(self):
         '''
         Проверяем наличие топлива и при значении выше 0 стартуем двигатель
         иначе вызываем ошибку LowFuelError
-        :return: двигатель запущен или нет
+        :return: двигатель запущен
         '''
         if self.started is not True:
             if self.fuel > 0:
