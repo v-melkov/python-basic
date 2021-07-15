@@ -5,10 +5,10 @@
 - CargoOverload
 """
 class LowFuelError(Exception):
-    print('It\'s too low fuel to start!')
+    pass
 
 class NotEnoughFuel(Exception):
-    print('Not Enough Fuel to get to destination!')
+    pass
 
 class CargoOverload(Exception):
-    print('Cargo Overload!')
+    pass
